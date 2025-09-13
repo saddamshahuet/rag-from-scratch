@@ -32,8 +32,8 @@ EMBEDDINGS_MODEL = os.getenv('EMBEDDINGS_MODEL', 'nomic-embed-text:1.5')
 # Session management config
 SESSION_TIMEOUT = int(os.getenv('SESSION_TIMEOUT', '1800'))  # 30 minutes
 MEMORY_CLEANUP_INTERVAL = int(os.getenv('MEMORY_CLEANUP_INTERVAL', '300'))  # 5 minutes
-MAX_CONTEXT_LENGTH = int(os.getenv('MAX_CONTEXT_LENGTH', '8000'))  # Increased for better context retention
-SUMMARIZATION_THRESHOLD = int(os.getenv('SUMMARIZATION_THRESHOLD', '6000'))  # Trigger summarization when context exceeds this
+MAX_CONTEXT_LENGTH = int(os.getenv('MAX_CONTEXT_LENGTH', '4096'))
+SUMMARIZATION_THRESHOLD = int(os.getenv('SUMMARIZATION_THRESHOLD', '3200'))  # 80% of max context
 
 # API keys (if needed)
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '<your-openai-key>')

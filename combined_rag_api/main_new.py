@@ -22,24 +22,12 @@ from modules.session_manager import session_manager
 from modules.summarize_chat import summarize_chat_context
 import config
 
-# Import embedding and document processing APIs
-from embedding_vectorstore.api.document_routes import router as document_router
-from embedding_vectorstore.api.vectorstore_routes import router as vectorstore_router
-from embedding_vectorstore.api.embedding_routes import router as embedding_router
-from embedding_vectorstore.api.config_routes import router as config_router
-
 # Initialize FastAPI app
 app = FastAPI(title="Combined RAG API", version="1.0.0")
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-# Include routers for embedding and document processing
-app.include_router(document_router)
-app.include_router(vectorstore_router)
-app.include_router(embedding_router)
-app.include_router(config_router)
 
 # Pydantic models for request/response
 class ChatRequest(BaseModel):
