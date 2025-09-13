@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+openai
+chromadb
+bs4
+tiktoken
+pydantic
+requests  # Needed for Ollama API calls
+psycopg2  # Needed for pgvector/PostgreSQL
+aiohttp  # Needed for async HTTP requests
